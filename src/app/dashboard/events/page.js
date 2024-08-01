@@ -1,18 +1,25 @@
 
 import EventTable from "@/components/EventTable";
-import { Suspense } from "react";
 
+const get_events = async () =>{
+    try {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/events`, {next:{tags:["events"]}});
+            const result = await res.json();
+            return result.data;
 
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const page = async  () => {
-            const res = await fetch(`https://eventsnext.netlify.app/api/events`, {next:{tags:["events"]}});
-            const result = await res.json();
-         
+            
+         const events = await get_events()
     return (
         <div>
-                <Suspense fallback="Loading.....">
-                <EventTable data={result?.data}/>
-                </Suspense>
+                
+                <EventTable data={events}/>
+               
 
            
         </div>

@@ -1,8 +1,26 @@
+import EventsInfo from "@/components/Home/EventsInfo";
+import HeroSlider from "@/components/Home/HeroSlider";
+import { Suspense } from "react";
 
-export default function Home() {
+const get_Events = async () =>{
+    try {
+        const res = await fetch('http://localhost:3000/api/events',{next:{tags:"events"}})
+        const data = await res.json()
+        return data.data
+    } catch (error) {
+      
+    }
+}
+export default async  function Home() {
+  const data = await get_Events()
   return (
-  <main>
-        <h1 className="text-primary text-2xl">hello world</h1>
+  <main className="grid grid-cols-1 gap-16">
+       
+       <HeroSlider/>
+       <Suspense >
+
+       <EventsInfo data={data}/>
+       </Suspense>
   </main>
   );
 }

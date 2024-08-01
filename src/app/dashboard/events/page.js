@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 
 const page = async  () => {
-            const res = await fetch(`${process.env.NEXTAUTH_URL}/api/events`, {next:{tags:["events"]}});
+            const res = await fetch(`https://eventsnext.netlify.app/api/events`, {next:{tags:["events"]}});
             const result = await res.json();
          
     return (

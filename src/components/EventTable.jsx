@@ -57,7 +57,7 @@ const EventTable = ({data}) => {
             </TableHeader>
                     <TableBody>
 
-                      {data.map(row => <TableRow key={row._id}>
+                      {data && data?.map(row => <TableRow key={row._id}>
                                     <TableCell>
                                            {row.image !== "https://image.com" && <Image src={row.image} alt="image" width={150} height={150} className="w-16 h-16"/>}
                                     </TableCell>

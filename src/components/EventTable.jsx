@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { format } from 'date-fns';
 import revalideTag from "@/lib/revalideTag";
+import toast from "react-hot-toast";
 
 const EventTable = ({data}) => {
  
@@ -17,6 +18,7 @@ const EventTable = ({data}) => {
                         const result = await res.json();
                         if(result.status){
                                 revalideTag("events")
+                                toast("Your Event Remove Successfully")
                         }else{
                                 alert("some problem")
                         }

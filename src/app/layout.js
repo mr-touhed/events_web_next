@@ -2,7 +2,7 @@
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import AuthProvider from "./Providers";
-
+import { Toaster } from 'react-hot-toast';
 
 
 export const metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         {children}
         </body>
         </AuthProvider>
+        <Toaster />
     </html>
   );
 }

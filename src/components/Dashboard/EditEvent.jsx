@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 import { Textarea } from '../ui/textarea';
 import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
 import revalideTag from '@/lib/revalideTag';
+import toast from 'react-hot-toast';
 const EditEvent = ({data}) => {
     const [date, setDate] = useState(new Date(data?.dateInfo?.date));
    
@@ -62,7 +63,7 @@ const EditEvent = ({data}) => {
             
             if(result.status){
                 
-                
+                toast("your Event Update Successfully")
                 revalideTag("events")
                 revalideTag("events-edit")
             }else{

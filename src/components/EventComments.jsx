@@ -44,7 +44,7 @@ const EventComments =  ({commentsData}) => {
         <div className="bg-slate-100 p-6 space-y-2">
             <div className="grid grid-cols-1 gap-2">
             {
-                comments.map((comment,i) => <div key={i} className=" bg-slate-50 p-2 rounded-md border border-slate-200">
+                comments?.map((comment,i) => <div key={i} className=" bg-slate-50 p-2 rounded-md border border-slate-200">
                                 <div className="">
                                 <p className="uppercase">{comment.name}</p>
                                 <p className="text-sm ">{comment.message}</p>

@@ -30,7 +30,7 @@ const EventDetails = async ({params}) => {
                 <section className=" space-y-6">
                         <EventSlider/>
                         <div className="mt-6">
-                            <h2 className="text-2xl">	<span className=" font-bold">WHAT'S ABOUT EVENT /</span> <span className="font-thin">whats going on there come and learn</span></h2>
+                            <h2 className="text-2xl">	<span className=" font-bold">WHAT&rsquo;S ABOUT EVENT /</span> <span className="font-thin">whats going on there come and learn</span></h2>
                         </div>
                         <div className="space-y-6">
                             <p>{data.details}</p>

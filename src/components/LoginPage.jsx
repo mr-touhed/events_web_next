@@ -54,7 +54,7 @@ const LoginPage = () => {
                             <div className="grid w-full max-w-sm items-center gap-1.5 mx-auto">
                              <Label className={`text-red-400 font-thin text-sm text-center ${error ? "visible" : "invisible"}`}>{error}</Label>
                             <Button type="submit" className="text-white">Login</Button>
-                            <Link href="/register" className="text-right text-sm "> if you don't have any account <span className="text-red-700 underline">register !</span></Link>
+                            <Link href="/register" className="text-right text-sm "> if you don&rsquo;t have any account <span className="text-red-700 underline">register !</span></Link>
                             </div>
                            
 

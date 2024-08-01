@@ -45,6 +45,10 @@ const EditEvent = ({data}) => {
     const update_events = async(e) => {
         e.preventDefault()
         try {
+            const isImgBBUrl = event.image.includes('imgbb.com') || event.image.includes('ibb.co');
+                if(!isImgBBUrl){
+                   return  alert("use imgbb url only")
+                }
             const newEvent = {...event, date};
             
             const res = await fetch(`/api/events/${data._id}`, {

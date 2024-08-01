@@ -45,6 +45,12 @@ const AddEvent = () => {
     const handel_events = async(e) => {
         e.preventDefault()
         try {
+
+            const isImgBBUrl = event.image.includes('imgbb.com') || event.image.includes('ibb.co');
+                if(!isImgBBUrl){
+                   return  alert("use imgbb url only")
+                }
+
             const newEvent = {...event, date};
             
             const res = await fetch("/api/events", {
@@ -92,7 +98,7 @@ const AddEvent = () => {
                             </div>
                             <div className="grid w-full max-w-sm items-center gap-1.5 mx-auto">
                             <Label htmlFor="image">Image URL</Label>
-                            <Input type="text" id="image" placeholder="Image URl" name="image" value={event.image} onChange={e => change_input(e)}  />
+                            <Input type="text" id="image" placeholder="Use Imgbb url only" name="image" value={event.image} onChange={e => change_input(e)}  />
                             </div>
                             <div className="grid w-full max-w-sm items-center gap-1.5 mx-auto">
                             <Label htmlFor="catagory">Catagory</Label>

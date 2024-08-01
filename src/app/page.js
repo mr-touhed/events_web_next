@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 const get_Events = async () =>{
     try {
-        const res = await fetch(`/api/events`,{next:{tags:"events"}})
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/events`,{next:{tags:"events"}})
         const data = await res.json()
         return data.data
     } catch (error) {

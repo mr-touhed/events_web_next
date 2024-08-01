@@ -3,7 +3,7 @@ import EventTable from "@/components/EventTable";
 
 const get_events = async () =>{
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/events`, );
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/events`, { next:{tags:["events"]}});
             const result = await res.json();
             return result.data;
 

@@ -4,8 +4,8 @@ import { useState } from "react";
 import EventCard from "../EventCard";
 
 const EventsInfo = ({data}) => {
-    
-    const tabList = ["All","Conferences","Workshops","Concerts"];
+   
+    const tabList = ["All","Conference","Workshops","Concerts"];
     const [activeMenu,setActiveMenu] = useState('All')
     const changeTab = (value) =>{
         setActiveMenu(value)
@@ -24,19 +24,19 @@ const EventsInfo = ({data}) => {
                     data?.map((event,i) => <EventCard key={i} event={event}/>)
                 }
         </TabsContent>
-        <TabsContent value="Conferences" className="grid grid-cols-4 gap-6">
+        <TabsContent value="Conference" className="grid grid-cols-4 gap-6">
                 {
-                    data?.filter(event => event.catagory === "Conferences").map((event,i)=> <EventCard key={i} event={event}/>)
+                    data?.filter(event => event.category === "Conference").map((event,i)=> <EventCard key={i} event={event}/>)
                 }
             </TabsContent>
         <TabsContent value="Workshops" className="grid grid-cols-4 gap-6">
                 {
-                    data?.filter(event => event.catagory === "Workshops").map((event,i)=> <EventCard key={i} event={event}/>)
+                    data?.filter(event => event.category === "Workshops").map((event,i)=> <EventCard key={i} event={event}/>)
                 }
         </TabsContent>
         <TabsContent value="Concerts" className="grid grid-cols-4 gap-6">
                 {
-                    data?.filter(event => event.catagory === "Concerts").map((event,i)=> <EventCard key={i} event={event}/>)
+                    data?.filter(event => event.category === "Concerts").map((event,i)=> <EventCard key={i} event={event}/>)
                 }
         </TabsContent>
       </Tabs>
